@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>Formulario</title>
+
+<script language="javascript">
+
+function Subir()
+{
+	event.preventDefault();
+	console.log("He llegado");
+	var dni=document.form1.dni.value;
+	var nombre=document.form1.nombre.value;
+	var problema=parseInt(document.form1.problema.value);
+	var estado=parseInt(document.form1.estado.value);
+    
+	var raw = JSON.stringify({"DNI":dni,"nombre":nombre,"problema":problema,"estado":estado});
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+    };
+
+    fetch("http://localhost:5000/api/Estudiante", requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+}
+
+
+</script>
+
+</head>
+<body>
+<form name="form1" method="POST" action="">
+<table border="0" cellpadding="0" cellspacing="0" width="400">
+<tr>
+	<td width="50%">Ingresa el DNI: (*)</td>
+	<td width="50%"><input type="text" name="dni" id="dni" value=""></td>
+</tr>
+<tr>
+	<td width="50%">Ingresa el nombre: (*)</td>
+	<td><input type="text" name="nombre" id="nombre" value=""></td>
+</tr>
+<tr>
+	<td width="50%">Ingresa el problema: (*)</td>
+	<td><input type="number" name="problema" id="problema" value=""></td>
+</tr>
+<tr>
+	<td width="50%">Ingresa el estado:</td>
+	<td width="50%"><input type="number" name="estado" id="estado" value=""></td>
+</tr>
+
+<tr>
+	<td width="50%" align="center">
+		<button type="button" name="boton" onClick="Subir()">Crear usuario</button>
+	</td>
+</tr>
+</table>
+
+
+</form>
+</body>
+</html>
