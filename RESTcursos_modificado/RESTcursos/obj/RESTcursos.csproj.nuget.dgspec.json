@@ -1,0 +1,75 @@
+{
+  "format": 1,
+  "restore": {
+    "F:\\UPCT_Telematica_17-18\\5(MASTER)\\Desarrollo_proyectos\\calamar\\RESTcursos_modificado\\RESTcursos\\RESTcursos.csproj": {}
+  },
+  "projects": {
+    "F:\\UPCT_Telematica_17-18\\5(MASTER)\\Desarrollo_proyectos\\calamar\\RESTcursos_modificado\\RESTcursos\\RESTcursos.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\UPCT_Telematica_17-18\\5(MASTER)\\Desarrollo_proyectos\\calamar\\RESTcursos_modificado\\RESTcursos\\RESTcursos.csproj",
+        "projectName": "RESTcursos",
+        "projectPath": "F:\\UPCT_Telematica_17-18\\5(MASTER)\\Desarrollo_proyectos\\calamar\\RESTcursos_modificado\\RESTcursos\\RESTcursos.csproj",
+        "packagesPath": "C:\\Users\\Milio\\.nuget\\packages\\",
+        "outputPath": "F:\\UPCT_Telematica_17-18\\5(MASTER)\\Desarrollo_proyectos\\calamar\\RESTcursos_modificado\\RESTcursos\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Milio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
