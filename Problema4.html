@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div  style="height: 600px; width: 900px;">
+        <canvas class = "container text-center" id="graficaUser">
+        </canvas>
+    </div>
+
+    <div class = "row text-center"> <h3><a href="index.html"> Volver </a></h3> </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    var xhr = new XMLHttpRequest();
+    xhr.withCredentials = false;
+    let gatos = ''
+    let status = false;
+    xhr.addEventListener("readystatechange", function () {
+        if (this.readyState === 4) {
+            //console.log(this.responseText);
+            gatos = JSON.parse(this.responseText)
+            //console.log(datos[0])
+            pintarGrafica();
+        }
+    });
+
+    xhr.open("GET", "http://localhost:5000/api/Data");
+
+    xhr.send();
+
+   
+
+    function pintarGrafica() {
+        let contenedor = {
+            labels:[],
+            datasets: [
+                {
+                    label: 'Visitadas',
+                    borderColor: 'rgba(255, 204, 0, 1)',
+                    backgroundColor: [
+                        'rgba(54, 162, 235, 0.8)',
+     
+                    ],
+                    data:[]
+                },
+                {
+                    label: 'Completadas',
+                    borderColor: 'rgba(24, 120, 240, 1)',
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.8)',
+                    ],
+                    data:[]
+                }
+            ]
+        };
+        let long = gatos.length
+        let visit = []
+        let  la = []
+        let comp = []
+        
+        for (let i = 0; i < long; i++) {
+            la.push(gatos[i].titulo)
+            comp.push(gatos[i].completas)
+            visit.push(gatos[i].visitadas)
+        }
+        contenedor.labels = la
+        contenedor.datasets[0].data = visit
+        contenedor.datasets[1].data = comp
+        
+        
+        var ctx = document.getElementById('graficaUser').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: contenedor,
+            options:{
+                indexAxis:'y',
+                responsive:true,
+                plugins:{
+                    legend:{
+                        position:'right',
+
+                    }
+                }
+            }
+            
+        });
+        
+        myChart.update()
+    }
+
+    
+
+</script>
+    
+</html>
