@@ -1,0 +1,106 @@
+<html>
+
+<head>
+
+    <title>Desarrollo de Proyectos Software</title>
+
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!--AÑADIDO JQUERY, NECESARIO PARA SCRIPT DE PROBLEMA 2-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+
+    <script src="metodos.js"></script>
+    <script src="completados.js"></script>
+    <script src="tabla.js"></script>
+
+    <link rel="icon" href="./imagenes/gane.png" type="image/png" />
+
+</head>
+
+<body>
+
+    <div id="imagen"></div>
+
+    <div class="container">
+
+        <div class="row">
+            <h1>Desarrollo de Proyectos Software</h1>
+        </div>
+
+        <div class="row">
+            <div id="problemas"></div>
+        </div>
+
+
+        <div class="row">
+            <h4><a href="Problema4.html"> Ver gráficas </a></h3>
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">DNI</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Problema</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">¿Desea abandonar?</th>
+                </tr>
+            </thead>
+            <tbody id="contenido">
+
+
+            </tbody>
+        </table>
+
+    </div>
+
+
+
+    <div class="container">
+
+        <form name="form1" method="POST" action="">
+
+            <div class="form-row">
+
+                <div class="col-md-3 mb-3">
+                    <label for="dni">DNI (*)</label>
+                    <input class="form-control" name="dni" id="dni" aria-describedby="dni" type="text" placeholder="Ingresa el DNI" required>
+                </div>
+
+                <div class="col-md-3 mb-3">
+                    <label for="nombre">Nombre (*)</label>
+                    <input class="form-control" id="nombre" aria-describedby="nombre" type="text" placeholder="Ingresa el nombre" required>
+                </div>
+
+                <div class="col-md-3 mb-3">
+                    <label for="problema">Problema (*)</label>
+                    <input class="form-control" id="problema" aria-describedby="problema" type="number" placeholder="Ingresa el problema" min="1" max="5" required>
+                </div>
+
+                <div class="col-md-3 mb-3 ">
+                    <label for="enviar"><br></label>
+                    <button class=" form-control btn btn-primary " type="submit" id="enviar">agregar</button>
+                </div>
+
+            </div>
+
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>
