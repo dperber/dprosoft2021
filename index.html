@@ -19,6 +19,7 @@
 
     <script src="metodos.js"></script>
     <script src="completados.js"></script>
+    <script src="tabla.js"></script>
 
     <link rel="icon" href="./imagenes/gane.png" type="image/png" />
 
@@ -42,6 +43,61 @@
         <div class="row">
             <h4><a href="Problema4.html"> Ver gráficas </a></h3>
         </div>
+
+    </div>
+
+    <div class="container">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">DNI</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Problema</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">¿Desea abandonar?</th>
+                </tr>
+            </thead>
+            <tbody id="contenido">
+
+
+            </tbody>
+        </table>
+
+    </div>
+
+
+
+    <div class="container">
+
+        <form name="form1" method="POST" action="">
+
+            <div class="form-row">
+
+                <div class="col-md-3 mb-3">
+                    <label for="dni">DNI (*)</label>
+                    <input class="form-control" name="dni" id="dni" aria-describedby="dni" type="text" placeholder="Ingresa el DNI" required>
+                </div>
+
+                <div class="col-md-3 mb-3">
+                    <label for="nombre">Nombre (*)</label>
+                    <input class="form-control" id="nombre" aria-describedby="nombre" type="text" placeholder="Ingresa el nombre" required>
+                </div>
+
+                <div class="col-md-3 mb-3">
+                    <label for="problema">Problema (*)</label>
+                    <input class="form-control" id="problema" aria-describedby="problema" type="number" placeholder="Ingresa el problema" min="1" max="5" required>
+                </div>
+
+                <div class="col-md-3 mb-3 ">
+                    <label for="enviar"><br></label>
+                    <button class=" form-control btn btn-primary " type="submit" id="enviar">agregar</button>
+                </div>
+
+            </div>
+
+
+        </form>
 
     </div>
 
